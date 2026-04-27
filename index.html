@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tell Your Story · Vermont Cheese Council</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper: #f6f1e6;
+    --paper-2: #efe8d6;
+    --ink: #2a2a26;
+    --ink-soft: #6a6a60;
+    --green: #2d4a36;
+    --green-soft: #4a6b54;
+    --orange: #c45a2c;
+    --orange-soft: #e57a4a;
+    --rule: rgba(45,74,54,0.18);
+    --rule-strong: rgba(45,74,54,0.4);
+  }
+  *{ box-sizing: border-box; }
+  html, body{ height: 100%; }
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif{ font-family: 'Newsreader', serif; }
+
+  /* ---------- Top bar (progress + brand) ---------- */
+  .topbar{
+    position: fixed; top:0; left:0; right:0;
+    display: flex; align-items: center; gap: 24px;
+    padding: 14px 28px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    z-index: 50;
+  }
+  .brand{
+    font-family:'Newsreader', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--green);
+    white-space: nowrap;
+  }
+  .brand strong{ font-style: normal; font-weight: 600; }
+  .progress-wrap{
+    flex: 1;
+    display:flex; align-items:center; gap: 14px;
+  }
+  .progress-track{
+    flex:1;
+    height: 4px;
+    background: rgba(45,74,54,0.1);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .progress-fill{
+    height: 100%;
+    background: var(--orange);
+    width: 0%;
+    transition: width 280ms cubic-bezier(.2,.7,.3,1);
+  }
+  .progress-label{
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+  .topbar-actions{ display: flex; gap: 8px; }
+  .ghost-btn{
+    background: transparent;
+    border: 1px solid var(--rule-strong);
+    color: var(--green);
+    font: inherit;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: background 120ms;
+  }
+  .ghost-btn:hover{ background: rgba(45,74,54,0.06); }
+
+  /* ---------- Stage ---------- */
+  .stage{
+    min-height: 100vh;
+    padding: 80px 28px 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .card{
+    width: 100%;
+    max-width: 720px;
+    animation: fadeUp 380ms cubic-bezier(.2,.7,.3,1);
+  }
+  @keyframes fadeUp{
+    from{ opacity: 0; transform: translateY(12px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  /* Question chrome */
+  .qmeta{
+    display: flex; align-items: baseline; gap: 14px;
+    margin-bottom: 24px;
+    color: var(--green-soft);
+    font-family:'Newsreader', serif;
+    font-style: italic;
+    font-size: 15px;
+  }
+  .qmeta .dot{ width: 4px; height:4px; border-radius:50%; background: var(--orange); display:inline-block; }
+  .qmeta .step{ font-variant-numeric: tabular-nums; letter-spacing: 0.03em; }
+  .section-tag{
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+    color: var(--green);
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  }
+
+  h1.qtitle{
+    font-family:'Newsreader', serif;
+    font-weight: 500;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+    text-wrap: pretty;
+  }
+  h1.qtitle em{ color: var(--orange); font-style: italic; }
+  .qhelp{
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0 0 28px;
+    max-width: 60ch;
+  }
+  .qhelp em{ font-family:'Newsreader', serif; font-style: italic; color: var(--green-soft); }
+
+  /* Inputs */
+  textarea.answer, input.answer{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid var(--rule-strong);
+    padding: 12px 0 14px;
+    font-family:'Newsreader', serif;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.45;
+    outline: none;
+    resize: none;
+    transition: border-color 160ms;
+  }
+  textarea.answer{ min-height: 64px; }
+  textarea.answer:focus, input.answer:focus{ border-color: var(--orange); }
+  textarea.answer::placeholder, input.answer::placeholder{
+    color: rgba(42,42,38,0.28);
+    font-style: italic;
+  }
+
+  /* Checkbox grid */
+  .checks{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .check{
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.4);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 140ms;
+    font-size: 15px;
+  }
+  .check:hover{ border-color: var(--rule-strong); background: rgba(255,255,255,0.7); }
+  .check.on{
+    border-color: var(--orange);
+    background: rgba(196,90,44,0.08);
+  }
+  .check .box{
+    width: 18px; height: 18px;
+    border: 1.5px solid var(--green);
+    border-radius: 4px;
+    flex: 0 0 auto;
+    position: relative;
+    background: white;
+  }
+  .check.on .box{ background: var(--orange); border-color: var(--orange); }
+  .check.on .box::after{
+    content: '';
+    position: absolute;
+    left: 4px; top: 1px; width: 6px; height: 11px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .check small{ color: var(--ink-soft); font-size: 13px; margin-left: 4px; }
+
+  .other-row{
+    display: flex; align-items: center; gap: 12px;
+    margin-top: 4px;
+    padding-top: 8px;
+  }
+  .other-row .check{ flex: 0 0 auto; min-width: 110px; }
+  .other-row input.answer{ font-size: 17px; padding: 6px 0 8px; }
+
+  /* Footer / nav */
+  .navbar{
+    position: fixed; bottom: 0; left:0; right: 0;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 28px;
+    background: linear-gradient(to top, var(--paper) 70%, transparent);
+    z-index: 40;
+    gap: 12px;
+  }
+  .navbar .left, .navbar .right{ display: flex; gap: 10px; align-items:center; }
+  .hint{
+    color: var(--ink-soft);
+    font-size: 12px;
+    font-style: italic;
+    font-family: 'Newsreader', serif;
+  }
+  .btn{
+    background: var(--green);
+    color: var(--paper);
+    border: none;
+    font: inherit;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 12px 22px;
+    border-radius: 99px;
+    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: transform 100ms, background 140ms;
+  }
+  .btn:hover{ background: #1f3526; }
+  .btn:active{ transform: translateY(1px); }
+  .btn.primary{ background: var(--orange); }
+  .btn.primary:hover{ background: #a64921; }
+  .btn.subtle{
+    background: transparent;
+    color: var(--green);
+    border: 1px solid var(--rule-strong);
+  }
+  .btn.subtle:hover{ background: rgba(45,74,54,0.06); }
+  .btn[disabled]{ opacity: 0.4; cursor: not-allowed; }
+
+  /* Welcome / intro screens */
+  .welcome h1{
+    font-family:'Newsreader', serif;
+    font-weight: 500;
+    font-size: clamp(44px, 6vw, 72px);
+    line-height: 1.05;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
+  }
+  .welcome h1 em{ color: var(--orange); font-style: italic; }
+  .welcome p{ font-size: 18px; line-height: 1.55; color: var(--ink-soft); max-width: 56ch; }
+  .welcome .start-row{ margin-top: 36px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .welcome ul.what{
+    list-style: none; padding: 0; margin: 28px 0 0;
+    display: grid; gap: 10px; max-width: 56ch;
+  }
+  .welcome ul.what li{
+    display: flex; align-items: baseline; gap: 14px;
+    font-family:'Newsreader', serif;
+    font-size: 18px;
+  }
+  .welcome ul.what .num{
+    color: var(--orange);
+    font-style: italic;
+    width: 24px;
+    flex: 0 0 auto;
+  }
+
+  /* Section divider screen */
+  .divider{ text-align: left; }
+  .divider .eyebrow{
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 12px;
+    color: var(--green);
+    margin-bottom: 18px;
+  }
+  .divider h1{
+    font-family:'Newsreader', serif;
+    font-weight: 500;
+    font-size: clamp(40px, 5.5vw, 60px);
+    line-height: 1.05;
+    margin: 0 0 18px;
+  }
+  .divider h1 em{ color: var(--orange); font-style: italic; }
+  .divider p{
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 58ch;
+  }
+
+  /* Review screen */
+  .review h1{
+    font-family:'Newsreader', serif;
+    font-weight: 500;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.1;
+    margin: 0 0 18px;
+  }
+  .review h1 em{ color: var(--orange); font-style: italic; }
+  .review .lede{ font-size: 17px; color: var(--ink-soft); max-width: 58ch; line-height: 1.55; }
+
+  .completeness{
+    margin: 36px 0 8px;
+    padding: 18px 22px;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    display: flex; align-items: flex-start; gap: 16px;
+  }
+  .completeness.warn{
+    border-color: var(--orange);
+    background: rgba(196,90,44,0.06);
+  }
+  .completeness.good{
+    border-color: var(--green-soft);
+    background: rgba(45,74,54,0.04);
+  }
+  .completeness .icon{
+    width: 28px; height: 28px; flex: 0 0 auto;
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .completeness.good .icon{ background: var(--green); }
+  .completeness.warn .icon{ background: var(--orange); }
+  .completeness h3{ margin: 0 0 4px; font-size: 16px; font-weight: 600; color: var(--ink); }
+  .completeness p{ margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+
+  .summary-grid{
+    display: grid; gap: 12px;
+    margin-top: 28px;
+  }
+  .summary-section{
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.4);
+    overflow: hidden;
+  }
+  .summary-section header{
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--rule);
+    font-family:'Newsreader', serif;
+  }
+  .summary-section header h4{
+    margin: 0; font-size: 17px; font-weight: 500;
+  }
+  .summary-section header .count{
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .summary-section .qa{
+    padding: 12px 18px;
+    border-top: 1px dashed var(--rule);
+    font-size: 14px;
+  }
+  .summary-section .qa:first-of-type{ border-top: none; }
+  .summary-section .qa .q{ color: var(--green); font-style: italic; font-family:'Newsreader',serif; margin-bottom: 4px; }
+  .summary-section .qa .a{ color: var(--ink); white-space: pre-wrap; }
+  .summary-section .qa.empty .a{ color: rgba(42,42,38,0.35); font-style: italic; }
+  .summary-section .qa button.jump{
+    background: none; border: none;
+    color: var(--orange);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0; margin-top: 4px;
+    text-decoration: underline;
+    text-decoration-color: rgba(196,90,44,0.4);
+  }
+  .summary-section .qa button.jump:hover{ text-decoration-color: var(--orange); }
+
+  .action-primary{
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 560px;
+  }
+  .btn.big{
+    font-size: 20px;
+    padding: 18px 32px;
+    border-radius: 99px;
+    box-shadow: 0 4px 16px rgba(196,90,44,0.25);
+  }
+  .btn.big:hover{ box-shadow: 0 6px 22px rgba(196,90,44,0.32); }
+
+  .actions-secondary{
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+  .actions-secondary .sep{ opacity: 0.5; }
+  a.text-link{
+    color: var(--green);
+    text-decoration: underline;
+    text-decoration-color: rgba(45,74,54,0.3);
+    text-underline-offset: 3px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+  }
+  a.text-link:hover{
+    color: var(--orange);
+    text-decoration-color: var(--orange);
+  }
+  .send-help{
+    margin: 0;
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* MD preview pane */
+  .md-preview{
+    margin-top: 28px;
+    background: #faf6ec;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .md-preview header{
+    display:flex; justify-content: space-between; align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .md-preview pre{
+    margin: 0;
+    padding: 18px 20px;
+    max-height: 320px;
+    overflow: auto;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Toast */
+  .toast{
+    position: fixed; bottom: 80px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--green);
+    color: var(--paper);
+    padding: 10px 18px;
+    border-radius: 99px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms, transform 200ms;
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .toast.on{
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Mobile */
+  @media (max-width: 600px){
+    .stage{ padding: 88px 18px 120px; }
+    .topbar{ padding: 12px 16px; gap: 14px; }
+    .navbar{ padding: 14px 16px; }
+    .brand{ display: none; }
+    h1.qtitle{ font-size: 26px; }
+    textarea.answer, input.answer{ font-size: 18px; }
+    .welcome h1{ font-size: 40px; }
+    .actions-row .btn{ width: 100%; justify-content: center; }
+  }
+
+  /* Keyboard hint */
+  kbd{
+    display: inline-block;
+    padding: 1px 6px;
+    border: 1px solid var(--rule-strong);
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    color: var(--green);
+    background: rgba(255,255,255,0.6);
+    line-height: 1.3;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><strong>Tell Your Story</strong> · <em>VT Cheese Council</em></div>
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-label" id="progressLabel">0%</div>
+  </div>
+  <div class="topbar-actions">
+    <button class="ghost-btn" id="reviewBtn">Review &amp; finish</button>
+    <button class="ghost-btn" id="resetBtn" title="Clear all answers">Reset</button>
+  </div>
+</div>
+
+<main class="stage" id="stage"></main>
+
+<div class="navbar">
+  <div class="left">
+    <button class="btn subtle" id="backBtn">← Back</button>
+  </div>
+  <div class="hint" id="hint"></div>
+  <div class="right">
+    <button class="btn" id="nextBtn">Next →</button>
+  </div>
+</div>
+
+<div class="toast" id="toast">Saved</div>
+
+<script>
+/* ============================================================
+   QUESTION SCHEMA — mirrors the print packet
+============================================================ */
+const SECTIONS = [
+  {
+    id: 'biz',
+    label: 'About Your Business',
+    intro: {
+      eyebrow: 'Before you begin',
+      title: 'A few quick questions about <em>your business.</em>',
+      body: 'Three checkbox questions to give the LLM context about who you’re writing for and what you’re writing.'
+    },
+    questions: [
+      { id: 'biz_audience',  type: 'checks-other', q: 'Who needs to hear your story?',
+        options: ['Consumers', 'Cheesemongers', 'Wholesalers / distributors', 'Restaurants & chefs', 'Press / media', 'Retailers (grocery, specialty, co-op…)'] },
+      { id: 'biz_channels',  type: 'checks-other', q: 'Where do most people actually buy your cheese?',
+        options: ['At the creamery / on-farm store', 'Farmers markets', 'Cut-to-order cheese shops', 'Restaurants', 'Online, direct from us', 'Retailers (grocery, specialty, co-op…)'] },
+      { id: 'biz_outputs',   type: 'checks-other', q: 'What do you need to write?',
+        options: ['Website copy', 'An info sheet for buyers and industry pros', 'A short elevator pitch (verbal)', 'A longer narrative for speeches, articles, or interviews', 'Label or shelf-tag copy', 'Social media captions'] },
+    ],
+  },
+  {
+    id: 'ws1',
+    label: 'Worksheet One — The Cheese Story',
+    intro: {
+      eyebrow: 'Worksheet One',
+      title: 'The <em>Cheese</em> Story.',
+      body: "Use this section if you want to start with the cheese itself. Don't try to explain why it's special yet — just give concrete details."
+    },
+    questions: [
+      { id: 'ws1_name',   type: 'short', q: 'What cheese are we talking about?', help: 'Cheese name.' },
+      { id: 'ws1_what',   type: 'long',  q: 'In the plainest possible terms, what is it?', help: 'Milk type, style, age, format, rind, category, etc.' },
+      { id: 'ws1_milk_type', type: 'checks', q: 'What animal milk is involved?',
+        options: ['Cow', 'Goat', 'Sheep', 'Mixed milk', 'Other'] },
+      { id: 'ws1_milk_detail', type: 'long', q: 'Anything specific about the milk or animals?',
+        help: '<em>Breed, raw or pasteurized, single herd, seasonal milk, grass, hay, morning or evening milk.</em>' },
+      { id: 'ws1_family', type: 'long', q: 'What cheese family or tradition does this belong to?',
+        help: '<em>Alpine, cheddar, washed rind, bloomy rind, fresh goat, blue, tomme, Gouda-style, lactic, pasta filata, mixed milk, something else.</em>' },
+      { id: 'ws1_compare', type: 'long', q: 'What other cheeses would someone compare it to?',
+        help: 'Reference points, not exact matches. If you’re not sure, write "not sure."' },
+      { id: 'ws1_different', type: 'long', q: 'How do you make this cheese differently from other people?',
+        help: '<em>Different milk, aging, rind treatment, cultures, timing, season, equipment, scale, tradition, handling.</em>' },
+      { id: 'ws1_process', type: 'long', q: 'What physically happens to make or age this cheese?',
+        help: 'Ordinary language. <em>Washed every day, aged underground, cut small, stirred longer, wrapped in cloth, aged on boards, made only in one season.</em>' },
+      { id: 'ws1_say', type: 'long', q: 'What do you usually say when you hand someone a sample?',
+        help: 'The normal thing you actually say at a market table, tasting, shop, or event.' },
+      { id: 'ws1_react', type: 'long', q: 'What do people often say when they taste it?',
+        help: 'Real comments, even the unflattering ones.' },
+    ],
+  },
+  {
+    id: 'ws2',
+    label: 'Worksheet Two — The Maker Story',
+    intro: {
+      eyebrow: 'Worksheet Two',
+      title: 'The <em>Maker</em> Story.',
+      body: "Use this section if you want to start with your own path into cheese. This isn't a full biography — only details that might help someone understand you, your work, or the cheese."
+    },
+    questions: [
+      { id: 'ws2_who', type: 'short', q: 'Who are you?', help: 'Your name and company name.' },
+      { id: 'ws2_before', type: 'long', q: 'What were you doing before cheese, or before this cheese?',
+        help: '<em>Job, farm work, family business, school, food work, dairy work, something else.</em>' },
+      { id: 'ws2_pull', type: 'long', q: 'How did cheese pull you in?',
+        help: 'Was there a person, place, animal, job, taste, accident, crisis, opportunity, obsession, or practical need?' },
+      { id: 'ws2_hard', type: 'long', q: 'What was hard about getting here?',
+        help: '<em>Money, land, animals, regulation, learning the craft, finding customers, family, weather, mistakes, burnout, something else.</em>' },
+      { id: 'ws2_taught', type: 'long', q: 'Who taught you, influenced you, helped you, or challenged you?',
+        help: 'People, farms, cheesemakers, mentors, books, customers, mistakes, family, co-ops, buyers, animals, or anyone else.' },
+      { id: 'ws2_proud', type: 'long', q: 'What are you proudest of?',
+        help: 'The cheese, the business, the farm, the animals, your team, your customers, or something you survived.' },
+    ],
+  },
+  {
+    id: 'ws3',
+    label: 'Worksheet Three — The Place Story',
+    intro: {
+      eyebrow: 'Worksheet Three',
+      title: 'The <em>Place</em> Story.',
+      body: 'Use this section if you want to start with place: the farm, creamery, aging space, milk source, animals, town, county, region, or local history. Be as precise as you’re comfortable being.'
+    },
+    questions: [
+      { id: 'ws3_made', type: 'short', q: 'Where is the cheese made?',
+        help: 'An actual physical address if appropriate. If not, the town, county, or region.' },
+      { id: 'ws3_aged', type: 'long', q: 'Where is the cheese aged?',
+        help: "Same place as where it's made? Different cave, cellar, facility, affineur, partner, or co-op?" },
+      { id: 'ws3_milk_from', type: 'long', q: 'Where does the milk come from?',
+        help: 'Same farm? Neighboring farm? Specific herd or flock? Multiple farms? Town, county, or region?' },
+      { id: 'ws3_animals', type: 'long', q: 'What animals provide the milk?',
+        help: 'Species, breed if relevant, herd or flock size if useful, and anything concrete about how they’re raised.' },
+      { id: 'ws3_who', type: 'long', q: 'Who else is part of this place?',
+        help: 'Family, employees, neighbors, milk suppliers, animal caretakers, affineurs, co-ops, local partners, longtime customers, or anyone else.' },
+      { id: 'ws3_notice', type: 'long', q: 'What’s one thing someone would notice if they visited?',
+        help: 'Something they might see, smell, hear, touch, or remember.' },
+    ],
+  },
+];
+
+/* ============================================================
+   FLAT STEP LIST — welcome → [section intro → questions...]×N → review
+============================================================ */
+const STEPS = (() => {
+  const steps = [{ kind: 'welcome' }];
+  SECTIONS.forEach(sec => {
+    steps.push({ kind: 'intro', sectionId: sec.id });
+    sec.questions.forEach(q => {
+      steps.push({ kind: 'question', sectionId: sec.id, questionId: q.id });
+    });
+  });
+  steps.push({ kind: 'review' });
+  return steps;
+})();
+
+const TOTAL_QUESTIONS = SECTIONS.reduce((n, s) => n + s.questions.length, 0);
+const STORAGE_KEY = 'tellyourstory.v1';
+
+/* ============================================================
+   STATE
+============================================================ */
+let state = {
+  step: 0,
+  answers: {}, // { questionId: value }   value = string OR { selected: [], other: '' }
+};
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (data && typeof data === 'object'){
+      state.step = Math.max(0, Math.min(STEPS.length - 1, data.step|0));
+      state.answers = data.answers || {};
+    }
+  }catch(e){ console.warn('Could not load state', e); }
+}
+function saveState(){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }catch(e){ console.warn('Could not save state', e); }
+}
+
+/* ============================================================
+   ANSWERED LOGIC
+============================================================ */
+function isAnswered(q){
+  const v = state.answers[q.id];
+  if (v == null) return false;
+  if (typeof v === 'string') return v.trim().length > 0;
+  if (typeof v === 'object'){
+    const sel = (v.selected || []).length > 0;
+    const other = (v.other || '').trim().length > 0;
+    return sel || other;
+  }
+  return false;
+}
+function answeredCount(){
+  let n = 0;
+  SECTIONS.forEach(s => s.questions.forEach(q => { if (isAnswered(q)) n++; }));
+  return n;
+}
+function sectionAnsweredCount(sec){
+  return sec.questions.filter(isAnswered).length;
+}
+
+/* ============================================================
+   RENDER
+============================================================ */
+const stage = document.getElementById('stage');
+const backBtn = document.getElementById('backBtn');
+const nextBtn = document.getElementById('nextBtn');
+const hint = document.getElementById('hint');
+const progressFill = document.getElementById('progressFill');
+const progressLabel = document.getElementById('progressLabel');
+const reviewBtn = document.getElementById('reviewBtn');
+const resetBtn = document.getElementById('resetBtn');
+const toastEl = document.getElementById('toast');
+
+function showToast(msg){
+  toastEl.textContent = msg;
+  toastEl.classList.add('on');
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(()=> toastEl.classList.remove('on'), 1600);
+}
+
+function findSection(id){ return SECTIONS.find(s => s.id === id); }
+function findQuestion(qid){
+  for (const s of SECTIONS){
+    const q = s.questions.find(x => x.id === qid);
+    if (q) return { section: s, question: q };
+  }
+  return null;
+}
+
+function questionGlobalIndex(qid){
+  let n = 0;
+  for (const s of SECTIONS){
+    for (const q of s.questions){
+      n++;
+      if (q.id === qid) return n;
+    }
+  }
+  return 0;
+}
+
+function render(){
+  stage.innerHTML = '';
+  const step = STEPS[state.step];
+
+  if (step.kind === 'welcome') renderWelcome();
+  else if (step.kind === 'intro') renderIntro(findSection(step.sectionId));
+  else if (step.kind === 'question'){
+    const { section, question } = findQuestion(step.questionId);
+    renderQuestion(section, question);
+  } else if (step.kind === 'review') renderReview();
+
+  updateChrome();
+  saveState();
+}
+
+function updateChrome(){
+  const pct = Math.round((answeredCount() / TOTAL_QUESTIONS) * 100);
+  progressFill.style.width = pct + '%';
+  progressLabel.textContent = pct + '% · ' + answeredCount() + ' of ' + TOTAL_QUESTIONS;
+
+  backBtn.style.visibility = state.step === 0 ? 'hidden' : 'visible';
+  const step = STEPS[state.step];
+  if (step.kind === 'welcome'){
+    nextBtn.textContent = (answeredCount() > 0 ? 'Continue →' : 'Start →');
+    hint.innerHTML = '';
+  } else if (step.kind === 'review'){
+    nextBtn.style.display = 'none';
+    hint.innerHTML = '';
+  } else if (step.kind === 'intro'){
+    nextBtn.textContent = 'Begin →';
+    nextBtn.style.display = '';
+    hint.innerHTML = '';
+  } else {
+    nextBtn.textContent = 'Next →';
+    nextBtn.style.display = '';
+    hint.innerHTML = 'Press <kbd>Enter</kbd> for next · <kbd>Shift+Enter</kbd> for new line';
+  }
+}
+
+/* ---------- Welcome ---------- */
+function renderWelcome(){
+  const continuing = answeredCount() > 0;
+  stage.innerHTML = `
+    <div class="card welcome">
+      <div class="qmeta"><span class="section-tag">Vermont Cheese Council · 2026</span></div>
+      <h1>Tell Your <em>Story.</em></h1>
+      <p>${continuing
+        ? `Welcome back. You’ve answered ${answeredCount()} of ${TOTAL_QUESTIONS} questions. Continue where you left off — or jump to the review screen anytime.`
+        : `Quick story worksheets for Vermont cheesemakers. Don’t try to write polished prose. Give facts, fragments, memories, details. Messy is fine — we’ll hand it to an LLM at the end.`}</p>
+      <ul class="what">
+        <li><span class="num serif">i.</span> A few quick questions about your business.</li>
+        <li><span class="num serif">ii.</span> Three short worksheets — cheese, maker, place.</li>
+        <li><span class="num serif">iii.</span> Download a clean <code>.md</code> file (or copy it for Claude).</li>
+      </ul>
+      <div class="start-row">
+        <button class="btn primary" id="welcomeStart">${continuing ? 'Continue →' : 'Start →'}</button>
+        ${continuing ? `<button class="btn subtle" id="welcomeReview">Skip to review</button>` : ''}
+      </div>
+    </div>
+  `;
+  document.getElementById('welcomeStart').onclick = () => goNext();
+  if (continuing) document.getElementById('welcomeReview').onclick = () => goTo(STEPS.length - 1);
+}
+
+/* ---------- Intro screen ---------- */
+function renderIntro(sec){
+  stage.innerHTML = `
+    <div class="card divider">
+      <div class="eyebrow">${sec.intro.eyebrow}</div>
+      <h1>${sec.intro.title}</h1>
+      <p>${sec.intro.body}</p>
+    </div>
+  `;
+}
+
+/* ---------- Question screens ---------- */
+function renderQuestion(sec, q){
+  const idx = questionGlobalIndex(q.id);
+  const sectionStep = sec.label;
+  let body = '';
+  if (q.type === 'short') body = renderShort(q);
+  else if (q.type === 'long') body = renderLong(q);
+  else if (q.type === 'checks') body = renderChecks(q, false);
+  else if (q.type === 'checks-other') body = renderChecks(q, true);
+
+  stage.innerHTML = `
+    <div class="card">
+      <div class="qmeta">
+        <span class="section-tag">${sectionStep}</span>
+        <span class="dot"></span>
+        <span class="step">${idx} / ${TOTAL_QUESTIONS}</span>
+      </div>
+      <h1 class="qtitle">${q.q}</h1>
+      ${q.help ? `<p class="qhelp">${q.help}</p>` : ''}
+      ${body}
+    </div>
+  `;
+  hookInputs(q);
+  // Autofocus the primary input
+  setTimeout(() => {
+    const el = stage.querySelector('input.answer, textarea.answer');
+    if (el && q.type !== 'checks') el.focus();
+  }, 60);
+}
+
+function renderShort(q){
+  const v = (state.answers[q.id] || '');
+  return `<input class="answer" data-qid="${q.id}" type="text" value="${escAttr(v)}" placeholder="Your answer…" />`;
+}
+function renderLong(q){
+  const v = (state.answers[q.id] || '');
+  return `<textarea class="answer" data-qid="${q.id}" rows="3" placeholder="Take your time. Fragments are fine.">${escHtml(v)}</textarea>`;
+}
+function renderChecks(q, withOther){
+  const v = state.answers[q.id] || { selected: [], other: '' };
+  const selected = new Set(v.selected || []);
+  const checks = q.options.map(opt => {
+    const on = selected.has(opt) ? 'on' : '';
+    const parts = opt.split(/\s*\(([^)]+)\)\s*$/);
+    const main = parts[0];
+    const sub = parts[1] ? `<small>(${parts[1]})</small>` : '';
+    return `<div class="check ${on}" data-qid="${q.id}" data-opt="${escAttr(opt)}">
+              <div class="box"></div>
+              <div>${main}${sub}</div>
+            </div>`;
+  }).join('');
+  const otherInput = withOther
+    ? `<div class="other-row">
+         <div class="check ${(v.other && v.other.length) ? 'on' : ''}" data-qid="${q.id}" data-opt="__other__">
+           <div class="box"></div>
+           <div>Other</div>
+         </div>
+         <input class="answer" data-qid="${q.id}" data-other="1" type="text" value="${escAttr(v.other || '')}" placeholder="Tell us…" />
+       </div>` : '';
+  return `<div class="checks">${checks}</div>${otherInput}`;
+}
+
+function hookInputs(q){
+  // Text inputs
+  stage.querySelectorAll('input.answer, textarea.answer').forEach(el => {
+    el.addEventListener('input', () => {
+      if (el.dataset.other === '1'){
+        const v = state.answers[q.id] || { selected: [], other: '' };
+        v.other = el.value;
+        // Toggle 'other' check visual state when typing
+        const otherCheck = stage.querySelector('.check[data-opt="__other__"]');
+        if (otherCheck){
+          if (v.other.trim()) otherCheck.classList.add('on');
+          else otherCheck.classList.remove('on');
+        }
+        state.answers[q.id] = v;
+      } else {
+        state.answers[q.id] = el.value;
+      }
+      saveState();
+      updateChrome();
+    });
+    if (el.tagName === 'INPUT' && !el.dataset.other){
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter'){ e.preventDefault(); goNext(); }
+      });
+    }
+    if (el.tagName === 'TEXTAREA'){
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); goNext(); }
+      });
+    }
+  });
+
+  // Checkbox toggles
+  stage.querySelectorAll('.check[data-opt]').forEach(el => {
+    el.addEventListener('click', () => {
+      const opt = el.dataset.opt;
+      const v = state.answers[q.id] || { selected: [], other: '' };
+      v.selected = v.selected || [];
+      if (opt === '__other__'){
+        // Toggle 'other' but don't blow away typed text
+        if (el.classList.contains('on') && (v.other || '').trim().length > 0){
+          // Clear if user explicitly unchecks while text exists → also clear text
+          v.other = '';
+          const otherText = stage.querySelector('input[data-other="1"]');
+          if (otherText) otherText.value = '';
+          el.classList.remove('on');
+        } else {
+          el.classList.toggle('on');
+          if (el.classList.contains('on')){
+            const otherText = stage.querySelector('input[data-other="1"]');
+            if (otherText) otherText.focus();
+          }
+        }
+      } else {
+        const i = v.selected.indexOf(opt);
+        if (i >= 0){ v.selected.splice(i, 1); el.classList.remove('on'); }
+        else { v.selected.push(opt); el.classList.add('on'); }
+      }
+      state.answers[q.id] = v;
+      saveState();
+      updateChrome();
+    });
+  });
+}
+
+/* ---------- Review ---------- */
+function renderReview(){
+  const total = TOTAL_QUESTIONS;
+  const answered = answeredCount();
+  const pct = total ? Math.round((answered / total) * 100) : 0;
+  const enough = pct >= 50;
+  const sectionsHtml = SECTIONS.map(sec => {
+    const sa = sectionAnsweredCount(sec);
+    const items = sec.questions.map(q => {
+      const v = state.answers[q.id];
+      const empty = !isAnswered(q);
+      const a = empty ? '— skipped —' : formatAnswerForDisplay(v);
+      return `<div class="qa ${empty ? 'empty' : ''}">
+                <div class="q">${q.q}</div>
+                <div class="a">${escHtml(a)}</div>
+                <button class="jump" data-qid="${q.id}">${empty ? 'Answer this' : 'Edit'}</button>
+              </div>`;
+    }).join('');
+    return `<div class="summary-section">
+              <header><h4>${sec.label}</h4><span class="count">${sa} / ${sec.questions.length}</span></header>
+              ${items}
+            </div>`;
+  }).join('');
+
+  const md = buildMarkdown();
+
+  stage.innerHTML = `
+    <div class="card review">
+      <div class="qmeta"><span class="section-tag">Final step</span></div>
+      <h1>Review &amp; <em>finish.</em></h1>
+      <p class="lede">Look over what you wrote. Edit anything. Then download your <code>.md</code> file or copy it straight to Claude.</p>
+
+      <div class="completeness ${enough ? 'good' : 'warn'}">
+        <div class="icon">${enough ? '✓' : '!'}</div>
+        <div>
+          <h3>${enough
+              ? `You’ve answered ${answered} of ${total} questions (${pct}%).`
+              : `You’ve only answered ${answered} of ${total} questions (${pct}%).`}</h3>
+          <p>${enough
+              ? `That’s plenty for the LLM to work with. Skipped questions are fine — they won’t be included in the output.`
+              : `Claude can still help, but the more raw material it has, the better the output. Consider going back to fill in a few more — even fragments help.`}</p>
+        </div>
+      </div>
+
+      <div class="summary-grid">${sectionsHtml}</div>
+
+      <div class="action-primary">
+        <button class="btn primary big" id="copyBtn">📋  Send to Claude</button>
+        <p class="send-help">This will open a Claude window. You might need to sign up for a free account. Then paste this in and hit return.</p>
+      </div>
+
+      <div class="actions-secondary">
+        <a class="text-link" id="downloadBtn" href="#">download .md</a>
+        <span class="sep">·</span>
+        <a class="text-link" id="backToStartBtn" href="#">back to start</a>
+      </div>
+    </div>
+  `;
+
+  // Wire up jumps
+  stage.querySelectorAll('button.jump').forEach(btn => {
+    btn.onclick = () => {
+      const qid = btn.dataset.qid;
+      const idx = STEPS.findIndex(s => s.kind === 'question' && s.questionId === qid);
+      if (idx >= 0) goTo(idx);
+    };
+  });
+
+  document.getElementById('downloadBtn').onclick = (e) => { e.preventDefault(); downloadMd(); };
+  document.getElementById('copyBtn').onclick = copyForClaude;
+  document.getElementById('backToStartBtn').onclick = (e) => { e.preventDefault(); goTo(0); };
+}
+
+function formatAnswerForDisplay(v){
+  if (typeof v === 'string') return v.trim();
+  if (typeof v === 'object' && v){
+    const parts = (v.selected || []).slice();
+    if ((v.other || '').trim()) parts.push('Other: ' + v.other.trim());
+    return parts.join(', ');
+  }
+  return '';
+}
+
+/* ============================================================
+   MARKDOWN BUILDER
+============================================================ */
+function buildMarkdown(){
+  const lines = [];
+  lines.push('# Tell Your Story — raw worksheet answers');
+  lines.push('');
+  lines.push('> **For Claude:** Before helping with this, read the Vermont Cheese Story Kit at <https://github.com/adamjdavidson/vcc> and use it as your guide. Below are raw worksheet answers from a Vermont cheesemaker. Use them as source material to help draft whatever the maker has indicated they need (see "About Your Business" → "What do you need to write?"). Keep their voice. Don\'t invent facts. If something is missing, ask.');
+  lines.push('');
+
+  SECTIONS.forEach(sec => {
+    const answered = sec.questions.filter(isAnswered);
+    if (answered.length === 0) return;
+    lines.push('## ' + sec.label);
+    lines.push('');
+    answered.forEach(q => {
+      const v = state.answers[q.id];
+      lines.push('**' + q.q + '**');
+      lines.push('');
+      if (q.type === 'checks' || q.type === 'checks-other'){
+        const sel = (v.selected || []);
+        sel.forEach(s => lines.push('- ' + s));
+        if ((v.other || '').trim()) lines.push('- Other: ' + v.other.trim());
+      } else {
+        // Long/short text — preserve user's line breaks
+        const text = (v || '').trim();
+        text.split(/\n+/).forEach(p => {
+          if (p.trim()) lines.push(p.trim());
+        });
+      }
+      lines.push('');
+    });
+  });
+
+  // Trim trailing blank line
+  while (lines.length && lines[lines.length-1] === '') lines.pop();
+  lines.push('');
+  return lines.join('\n');
+}
+
+function downloadMd(){
+  const md = buildMarkdown();
+  const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'my-cheese-story.md';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 100);
+  showToast('Downloaded my-cheese-story.md');
+}
+
+async function copyForClaude(){
+  const md = buildMarkdown();
+  let copied = false;
+  try{
+    await navigator.clipboard.writeText(md);
+    copied = true;
+  }catch(e){
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = md;
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); copied = true; }
+    catch(_){ /* ignore */ }
+    ta.remove();
+  }
+  // Open claude.ai/new in a new tab regardless — must happen synchronously
+  // after a user gesture for popup blockers to allow it.
+  window.open('https://claude.ai/new', '_blank', 'noopener');
+  if (copied) showToast('Copied! Paste into Claude with Cmd/Ctrl+V');
+  else showToast('Could not copy — use Download instead');
+}
+
+/* ============================================================
+   NAV
+============================================================ */
+function goTo(i){
+  state.step = Math.max(0, Math.min(STEPS.length - 1, i));
+  render();
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+function goNext(){ goTo(state.step + 1); }
+function goBack(){ goTo(state.step - 1); }
+
+backBtn.addEventListener('click', goBack);
+nextBtn.addEventListener('click', goNext);
+reviewBtn.addEventListener('click', () => goTo(STEPS.length - 1));
+resetBtn.addEventListener('click', () => {
+  if (confirm('Clear all answers and start over?')){
+    state = { step: 0, answers: {} };
+    saveState();
+    render();
+  }
+});
+
+// Global keyboard nav (when not focused in an input)
+document.addEventListener('keydown', (e) => {
+  if (e.target.matches('input, textarea')) return;
+  if (e.key === 'ArrowRight' || e.key === 'Enter') { e.preventDefault(); goNext(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); goBack(); }
+});
+
+/* ============================================================
+   UTILS
+============================================================ */
+function escHtml(s){
+  return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;');
+}
+function escAttr(s){
+  return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;')
+    .replace(/"/g,'&quot;')
+    .replace(/</g,'&lt;');
+}
+
+/* ============================================================
+   BOOT
+============================================================ */
+loadState();
+render();
+</script>
+</body>
+</html>
