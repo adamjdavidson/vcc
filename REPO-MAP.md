@@ -13,6 +13,7 @@ A short guide for the LLM to find the right kind of help quickly.
 
 | You need… | Look in |
 |---|---|
+| The order of the work: story first, fact-checking last | `story-principles/story-first-fact-check-last.md` |
 | Story principles, the Passion Economy frame, anti-slop, source rules | `story-principles/` |
 | How to interpret a worksheet, voice memo, or interview | `workflow/` |
 | How to research a cheese style, a place, or an audience | `research/` |

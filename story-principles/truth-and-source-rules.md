@@ -2,7 +2,7 @@
 
 **Purpose:** Source-discipline rules. Always separate what the cheesemaker said, what the kit says, and what outside research suggests.
 
-The story must be true.
+The story must be true. But checking it is the **last** stage of the work, not the first: see `story-first-fact-check-last.md`. While the story is being found and shaped, track sources and never invent, but don't stop to verify details or ask the cheesemaker small factual questions.
 
 The LLM may research widely, but it must never invent claims about a specific cheesemaker, cheese, farm, animal, milk source, creamery, or business.
 

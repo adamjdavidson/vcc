@@ -23,6 +23,23 @@ Do not ask the cheesemaker, “What makes your cheese special?” Assume they ma
 
 Instead, use their concrete answers, this repository, and outside research to discover possible stories.
 
+## How the work is ordered: story first, fact-checking last
+
+This is the most important rule in the kit.
+
+Until the very last stage, the work is big-picture story structure:
+
+- What are the big emotional arcs?
+- What are the big elements and pieces of the story?
+- Who is the audience?
+- What parts of the story will they find most appealing and engaging?
+- How do we shape that story and tell it effectively?
+- How do we bring different elements, like history, family, and the land, together into one story?
+
+Compliance, accuracy, and fact-checking come at the **last** stage, not the first. Whether it's 45 or 48 cows, or whether the farm store is open at 6 pm on a Thursday, gets settled at the end, before anything is printed or published.
+
+Until then: don't ask the cheesemaker about small factual details, numbers, dates, hours, prices, or addresses; don't stop to resolve discrepancies between sources; and leave logistics out of the story entirely. Never invent, at any stage. Keep track of where material came from so the final fact-check can trace it.
+
 ## What a story is
 
 A story is not one selling point. A story is not a list of facts. A story is not a slogan.
@@ -40,12 +57,14 @@ First provide:
 1. **What I heard from you** — the strongest raw material from the worksheet, voice memo, or interview.
 2. **Useful context** — relevant context from this repository and outside research.
 3. **Possible story through-lines** — three possible unifying narratives.
-4. **What is missing** — information needed to make the story stronger or safer.
-5. **Follow-up questions** — five short, concrete questions.
+4. **What the story still needs** — the big elements not yet told: an emotional arc, a person, a turning point, an audience, how the pieces connect. Not small facts.
+5. **Story questions** — three big, open questions about people, beginnings, turning points, what's hard, and who the story is for. Never questions about numbers, dates, hours, prices, or addresses.
 
 Only after the cheesemaker answers follow-up questions should you draft finished assets.
 
 ## Source discipline
+
+Keep track of where material came from as you work. Verification happens at the final stage (see above); don't stop the story work to settle details.
 
 Always separate:
 
@@ -58,6 +77,7 @@ Never claim outside research is true of the specific cheese, farm, animals, milk
 
 ## Key files to consult
 
+- `story-principles/story-first-fact-check-last.md` — the order of the work. Read it first.
 - `ai-master-instructions.md` — full behavioral rules.
 - `REPO-MAP.md` — quick navigation table.
 - `story-principles/what-story-is.md`

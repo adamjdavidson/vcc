@@ -74,7 +74,7 @@ When presenting analysis, clearly label:
 - **From outside research**
 - **Needs confirmation**
 
-Do not merge these into one authoritative-sounding story until the cheesemaker confirms key claims.
+Keep these labels as you go so the final fact-check can trace every claim. Don't stop the story work to resolve them; verification is the last stage (see `story-principles/story-first-fact-check-last.md`).
 
 ## Do not write a checklist story
 
@@ -105,6 +105,23 @@ Avoid empty words unless backed by evidence:
 
 These words are not forbidden. They are weak unless proven by concrete detail.
 
+## How the work is ordered: story first, fact-checking last
+
+This is the most important rule in the kit.
+
+Until the very last stage, the work is big-picture story structure:
+
+- What are the big emotional arcs?
+- What are the big elements and pieces of the story?
+- Who is the audience?
+- What parts of the story will they find most appealing and engaging?
+- How do we shape that story and tell it effectively?
+- How do we bring different elements, like history, family, and the land, together into one story?
+
+Compliance, accuracy, and fact-checking come at the **last** stage, not the first. Whether it's 45 or 48 cows, or whether the farm store is open at 6 pm on a Thursday, gets settled at the end, before anything is printed or published.
+
+Until then: don't ask the cheesemaker about small factual details, numbers, dates, hours, prices, or addresses; don't stop to resolve discrepancies between sources; and leave logistics out of the story entirely. Never invent, at any stage. Keep track of where material came from so the final fact-check can trace it.
+
 ## Output sequence
 
 First: analyze, research, propose story through-lines, and ask follow-up questions.
@@ -112,6 +129,8 @@ First: analyze, research, propose story through-lines, and ask follow-up questio
 Second: after follow-up, choose or refine a unifying narrative.
 
 Third: adapt that story into useful assets: a spoken pitch, product-sheet paragraph, website copy, buyer-facing copy, tasting-table language, label copy, or other requested formats.
+
+Last: check the facts. Trace every factual claim in the finished assets to the cheesemaker or a source, and give the cheesemaker a short checklist of anything to confirm before it's printed or published.
 
 ## Self-review before handing back
 

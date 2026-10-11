@@ -29,8 +29,10 @@ The repository carries the deeper instructions. The prompt does not need to dupl
 > 1. The strongest raw material I gave you.
 > 2. Useful context from the Vermont Cheese Story Kit and from outside research.
 > 3. Three possible story through-lines.
-> 4. What is missing or unclear.
-> 5. Five short, concrete follow-up questions.
+> 4. What the story still needs: the big pieces, not small facts.
+> 5. Three big, open story questions.
+>
+> Work on the big picture first: the emotional arcs, the people, the audience, and how history, family, and the land fit together. Don't ask me about small details like numbers, dates, or hours. We'll check facts at the very end.
 >
 > After I answer the follow-up questions, we can shape one unifying story and turn it into the assets I need.
 

@@ -27,15 +27,15 @@ For each, include:
 - the story in one sentence,
 - which facts support it,
 - who it might work for,
-- what would need confirmation.
+- which part of it the audience would find most appealing.
 
-### 4. What is missing
+### 4. What the story still needs
 
-Name the gaps that prevent stronger storytelling.
+Name the big pieces not yet told: an emotional arc, a person, a turning point, how history, family, and the land connect. Not small facts; those are checked at the end.
 
-### 5. Five follow-up questions
+### 5. Three story questions
 
-Ask short, concrete questions.
+Ask big, open questions about people, beginnings, turning points, what's hard, and who the story is for. Never ask about numbers, dates, hours, prices, or addresses.
 
 ## Good through-line format
 
