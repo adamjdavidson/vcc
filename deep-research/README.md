@@ -52,6 +52,7 @@ Cite outside research as outside research. Confirm with the cheesemaker before c
 |---|---|
 | `vermont/place-and-season.md` | The five Vermont dairy landscapes (Champlain Valley, Connecticut River Valley, Vermont Piedmont, Green Mountains, Northeast Kingdom) broken out by region — soil, climate, what animals thrive there, forage, seasonality patterns, anchor producers. Plus a cross-cutting Vermont-wide seasonality section. **Load only the section matching the cheesemaker's region.** |
 | `vermont/dairy-and-cheese-history-1600-1980.md` | Pared story-facts: glaciers and the five regions, the sheep boom that built the pastures, the cow shift, women's farmhouse cheese, Crowley/Cabot/Grafton/Shelburne origin moments, the bulk-tank collapse, the counterculture seeds of the 1980 revival. |
+| `vermont/vermont-cheese-1985-2026.md` | Narrative history of Vermont's last 40 years: 1980s pioneers, Vermont Cheese Council, VIAC, Cellars at Jasper Hill, ACS Best of Show and World Cheese Awards record (verified years), FDA fights, 2017–2026 consolidation and plant closures, dairy-farm counts. Story seeds and a "Careful" list of contested dates. Sourced. |
 | `vermont/artisan-renaissance.md` | Pared story-facts on the modern era (1980–today): the Farm Bill commodity-collapse setup; pioneers (Hooper/Reese, Major, Kehlers, Dixon, Fondiller); infrastructure plays (Cabot Clothbound, Cellars at Jasper Hill, VCC, VIAC); terroir science (Iberville Shale, autochthonous starters); awards record; producer reference table. |
 
 ### `cheese-styles/` — cheese-style deep histories
@@ -61,7 +62,9 @@ Cite outside research as outside research. Confirm with the cheesemaker before c
 | `cheese-styles/alpine-storytelling-toolkit.md` | Alpine cheese history + sensory lexicon + copy formulas + Vermont alpine examples (Spring Brook Tarentaise, Jasper Hill Whitney, Parish Hill Idyll). The most "ready to use" file. |
 | `cheese-styles/alpine-goat-cheese-vermont.md` | 9000 BCE to 2026 goat-and-alpine history with detailed Vermont alpine-goat producer profiles (Twig Farm, Barn First, Blue Ledge, etc.). |
 | `cheese-styles/goat-history-toolkit.md` | Long-arc goat-cheese history (Neolithic origins, Mediterranean, Loire AOPs, modern American renaissance). |
-| `cheese-styles/cheddar-history.md` | *Phase 2A — to be added.* English origins, the 1851 Jesse Williams factory, the cheddaring process, the commoditization trap, Vermont's clothbound revival. |
+| `cheese-styles/cheddar-history.md` | Why cheddar exists (the big-cheese problem), Somerset scalding, Harding's system, Puritan dairy lineage and the West Indies trade, the American bandage/clothbound innovation, Vermont from Merino sheep to factories (1864) to fluid milk, Crowley/Plymouth/Grafton/Cabot/Shelburne origin stories, 20th-century commoditization. Built mainly on Kindstedt's *Cheese and Culture*. |
+| `cheese-styles/alpine-cheese-history.md` | Why Alpine cheese exists (transhumance constraints → big, cooked, low-salt wheels), deep and Roman history (Pliny's Tarentaise-region cheese), Saint Gall/Muri/Gruyère/Bern/fruitières, Swiss immigrants in Wisconsin, the US gruyère ruling, Vermont's Alpine turn (Thistle Hill, Spring Brook, Jasper Hill, von Trapp). Built mainly on Kindstedt. |
+| `cheese-styles/goat-cheese-history.md` | Goat domestication and the earliest (acid-set) cheeses, Homer/Greek/Roman goat cheese, Loire lactic tradition and the five AOPs, Poitou after phylloxera, America's 1980s "goat ladies," Vermont goat makers from Vermont Butter & Cheese (1984) on. Legends flagged. Built mainly on Kindstedt. |
 | *(Phase 2B):* washed-rind, blue, bloomy-rind, tomme, pasta-filata, gouda | Deferred. |
 
 ### `audiences/` — cheese-trade depth

@@ -65,5 +65,6 @@ load:
 
 - `deep-research/cheese-styles/alpine-storytelling-toolkit.md` — the most "ready to use" of the deep-research files; both history and vocabulary.
 - `deep-research/cheese-styles/alpine-goat-cheese-vermont.md` — if the cheese is goat-milk alpine.
+- `deep-research/cheese-styles/alpine-cheese-history.md` — why Alpine cheese exists, the medieval Swiss/French story, and Vermont's Alpine makers; story seeds included.
 
 Do not load these by default. See `deep-research/README.md` for selective-loading rules.

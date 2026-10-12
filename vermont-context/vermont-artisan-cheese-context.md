@@ -49,6 +49,7 @@ When a cheesemaker's story sits inside the modern Vermont artisan renaissance �
 
 - `deep-research/vermont/artisan-renaissance.md` — pared facts on the modern era: pioneer profiles, infrastructure plays, terroir science, awards, producer reference table.
 - `deep-research/vermont/dairy-and-cheese-history-1600-1980.md` — pared facts on the long arc that produced the 1980 inflection.
+- `deep-research/vermont/vermont-cheese-1985-2026.md` — narrative history of the last 40 years, with a verified awards record and recent consolidation.
 
 Do not load these by default. See `deep-research/README.md` for selective-loading rules.
 

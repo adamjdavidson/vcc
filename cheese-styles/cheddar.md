@@ -51,3 +51,11 @@ Do not assume cheddar must be orange, sharp, crumbly, or industrial.
 Do not describe a cheddar only as “sharp and creamy” unless there is nothing better.
 
 Avoid language that could describe any grocery-store cheddar.
+
+## Deeper source material
+
+When a cheesemaker's story touches where cheddar came from, the clothbound/bandaged tradition, colonial New England, or Vermont's historic cheddar makers (Crowley, Plymouth, Grafton, Cabot, Shelburne Farms), load:
+
+- `deep-research/cheese-styles/cheddar-history.md` — why cheddar exists, the Somerset-to-Vermont story, and story seeds.
+
+Do not load this by default. See `deep-research/README.md` for selective-loading rules. General cheddar history is not proof of any specific cheesemaker's tradition or method.

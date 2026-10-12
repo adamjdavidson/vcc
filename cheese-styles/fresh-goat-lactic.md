@@ -59,6 +59,7 @@ For a goat cheesemaker who wants:
 load:
 
 - `deep-research/cheese-styles/goat-history-toolkit.md` — global and historical depth.
+- `deep-research/cheese-styles/goat-cheese-history.md` — the oldest-cheese story, the Loire lactic tradition, America's 1980s goat-cheese pioneers, and Vermont goat makers; legends flagged.
 - `deep-research/cheese-styles/alpine-goat-cheese-vermont.md` — Vermont-specific goat producer landscape, especially for aged or alpine-style goat cheeses.
 
 Do not load these by default. See `deep-research/README.md` for selective-loading rules. General goat-cheese history is not proof of any specific cheesemaker's tradition or method.

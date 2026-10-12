@@ -105,9 +105,13 @@ Deep research (selective-load — do not read by default):
 - `deep-research/vermont/dairy-and-cheese-history-1600-1980.md`
 - `deep-research/vermont/artisan-renaissance.md`
 - `deep-research/vermont/place-and-season.md`
+- `deep-research/vermont/vermont-cheese-1985-2026.md`
 - `deep-research/cheese-styles/alpine-storytelling-toolkit.md`
 - `deep-research/cheese-styles/alpine-goat-cheese-vermont.md`
 - `deep-research/cheese-styles/goat-history-toolkit.md`
+- `deep-research/cheese-styles/cheddar-history.md`
+- `deep-research/cheese-styles/alpine-cheese-history.md`
+- `deep-research/cheese-styles/goat-cheese-history.md`
 - `deep-research/storytelling-evidence/selling-artisanal-food-through-story.md`
 - `deep-research/storytelling-evidence/notes/terroir-taste-of-place.md`
 - `deep-research/storytelling-evidence/notes/maker-and-family-stories.md`
