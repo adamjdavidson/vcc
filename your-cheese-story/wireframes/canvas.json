@@ -1,0 +1,24 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-11T18:35:00Z"},
+  "title": "Your Cheese Story wireframes",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 1080, "title": "Stage 1 · Gathering (start)", "expand": "fill", "is_interactive": true},
+    "Stage1-Ready.dc.html": {"x": 1520, "y": 0, "w": 1440, "h": 1180, "title": "Stage 1 · Gathering (ready to move on)", "expand": "fill", "is_interactive": true},
+    "Stage2.dc.html": {"x": 3040, "y": 0, "w": 1440, "h": 1560, "title": "Stage 2 · Story shape (three ideas)", "expand": "fill", "is_interactive": true},
+    "Stage2-Outline.dc.html": {"x": 4560, "y": 0, "w": 1440, "h": 1400, "title": "Stage 2 · Story outline (approve it)", "expand": "fill", "is_interactive": true},
+    "Stage2-Door.dc.html": {"x": 6080, "y": 0, "w": 1440, "h": 1080, "title": "Doors · going back from any stage", "expand": "fill", "is_interactive": true},
+    "Stage3.dc.html": {"x": 0, "y": 1940, "w": 1440, "h": 1100, "title": "Stage 3 · Audience (rough)", "expand": "fill", "is_interactive": true},
+    "Stage4.dc.html": {"x": 1520, "y": 1940, "w": 1440, "h": 980, "title": "Stage 4 · The essential story (rough)", "expand": "fill", "is_interactive": true},
+    "Stage5.dc.html": {"x": 3040, "y": 1940, "w": 1440, "h": 1100, "title": "Stage 5 · Telling it (rough)", "expand": "fill", "is_interactive": true}
+  },
+  "order": ["Main.dc.html", "Stage1-Ready.dc.html", "Stage2.dc.html", "Stage2-Outline.dc.html", "Stage2-Door.dc.html", "Stage3.dc.html", "Stage4.dc.html", "Stage5.dc.html"],
+  "notes": {
+    "row1": {"x": 0, "y": -300, "text": "Stages 1 and 2, worked through on von Trapp", "kind": "title1", "maxW": 7520},
+    "row2": {"x": 0, "y": 1640, "text": "Stages 3 to 5, rougher", "kind": "title1", "maxW": 4480},
+    "how": {"x": -560, "y": 0, "text": "The frame is the same on every screen. The five stages run across the top, and every one is a link: click any stage to go there. The orange bar is the default next move, which the maker can always ignore. The right column shows what we have so far.", "w": 440, "fill": "orange", "size": "m"}
+  },
+  "designSystems": []
+}
