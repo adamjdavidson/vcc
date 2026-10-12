@@ -108,6 +108,12 @@ Deep research (selective-load — do not read by default):
 - `deep-research/cheese-styles/alpine-storytelling-toolkit.md`
 - `deep-research/cheese-styles/alpine-goat-cheese-vermont.md`
 - `deep-research/cheese-styles/goat-history-toolkit.md`
+- `deep-research/storytelling-evidence/selling-artisanal-food-through-story.md`
+- `deep-research/storytelling-evidence/notes/terroir-taste-of-place.md`
+- `deep-research/storytelling-evidence/notes/maker-and-family-stories.md`
+- `deep-research/storytelling-evidence/notes/product-distinctiveness.md`
+- `deep-research/storytelling-evidence/notes/category-history.md`
+- `deep-research/storytelling-evidence/notes/broad-sweep-other-approaches.md`
 
 Design history (LLM should skip):
 

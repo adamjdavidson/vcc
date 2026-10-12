@@ -17,7 +17,8 @@ deep-research/
 ├── README.md                  ← this file
 ├── vermont/                   ← deep research on Vermont
 ├── cheese-styles/             ← deep history of specific cheese styles
-└── audiences/                 ← how the cheese trade actually works
+├── audiences/                 ← how the cheese trade actually works
+└── storytelling-evidence/     ← what research says about which artisanal food stories sell
 ```
 
 ## Selective-loading rules
@@ -69,6 +70,19 @@ Cite outside research as outside research. Confirm with the cheesemaker before c
 |---|---|
 | `audiences/cheesemonger-world.md` | *Phase 2A — to be added.* How cheesemongers operate, the ACS, Cheesemonger Invitational, the producer-monger relationship. |
 | *(Phase 2B):* retail-buyer-mindset, chef-sourcing, specialty-distributors, food-writers | Deferred. |
+
+### `storytelling-evidence/` — what kinds of stories sell artisanal food
+
+| File | Roughly covers |
+|---|---|
+| `storytelling-evidence/selling-artisanal-food-through-story.md` | Synthesis report (wine as anchor, plus cheese, bread, coffee, beer). Cross-cutting findings: specific beats generic, demonstrated beats claimed authenticity, audience involvement changes which cues matter. Sections on terroir (incl. UVM Taste of Place and Vermont-as-"claim" data), maker and family stories, product distinctiveness, deep category history, and other approaches. **Start here.** |
+| `storytelling-evidence/notes/terroir-taste-of-place.md` | Source notes: terroir sub-elements, appellation/PDO price premiums, Comté, how emerging regions build terroir, Vermont data. |
+| `storytelling-evidence/notes/maker-and-family-stories.md` | Source notes: founder motive and underdog research, handmade effect, family-firm signals, heritage clichés, channels and intermediaries. |
+| `storytelling-evidence/notes/product-distinctiveness.md` | Source notes: sensory language, novelty vs. revival, "explain the why", scarcity, shelf talkers and handselling. |
+| `storytelling-evidence/notes/category-history.md` | Source notes: deep-history claims (Georgia, Burgundy), brand-heritage research, how new producers borrow old traditions credibly, backlash cases. |
+| `storytelling-evidence/notes/broad-sweep-other-approaches.md` | Source notes: values, transparency, visits, scores vs. story, what fails, channel data for small producers. |
+
+Load this folder when deciding *which kind* of story to lead with for a given audience, or when a cheesemaker asks whether a story approach actually works. These are general findings, not facts about any cheesemaker.
 
 ## How to cite from this folder
 
