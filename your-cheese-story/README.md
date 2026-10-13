@@ -8,7 +8,9 @@ This folder mirrors the `claude/` folder of the "Cheese Narrative" Claude projec
 
 - **[`your-cheese-story-spec-v2.md`](your-cheese-story-spec-v2.md)** is the source of truth for the app. It covers the five stages, the doors between stages, the AI's jobs, and a map of which knowledge file feeds which stage (section 5).
 - **[`kit/flow.md`](kit/flow.md)** describes the stage model: Gathering, Story shape, Audience, The essential story, Telling it. It is a loop, never done.
-- **[`kit/story-arcs.md`](kit/story-arcs.md)** holds the eight story arcs and the shared story elements, the framework the whole app runs on.
+- **[`kit/v2/arcs-guide.md`](kit/v2/arcs-guide.md)** is the arcs guide the app runs on: ten story arcs with their elements, key and unlock questions, outline beats and best cases, plus the rules for coverage, readiness, ideas and outlines.
+- **[`kit/story-arcs.md`](kit/story-arcs.md)** holds the ten story arcs and the shared story elements in short form. Eight are about the creamery; The Make (a technical story for mongers and obsessive eaters) and The Reinvention (an old cheese rethought, for the curious eater) are about one cheese.
+- **[`kit/story-arc-best-cases.md`](kit/story-arc-best-cases.md)** has real cheeses that show each arc done well, with sources. They are models of shape, never material for another maker's story.
 
 ## What's here
 

@@ -124,3 +124,9 @@ Design history (LLM should skip):
 - `_design-history/README.md`
 - `_design-history/repo-build-brief.md`
 - `_design-history/worksheet-design-brief.md`
+
+Your Cheese Story app (story arcs):
+
+- `your-cheese-story/kit/v2/arcs-guide.md`
+- `your-cheese-story/kit/story-arcs.md`
+- `your-cheese-story/kit/story-arc-best-cases.md`

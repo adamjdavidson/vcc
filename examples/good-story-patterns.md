@@ -98,3 +98,35 @@ Works well when:
 Key question:
 
 > What does knowing this story help someone notice while eating?
+
+## Pattern 7: The make, decision by decision
+
+The story is the set of choices in the vat and the cave, each tied to what it does in the cheese. Told in technical vocabulary, for people who sell or obsess over cheese.
+
+Works well when:
+
+- the audience is cheesemongers, buyers, or very knowledgeable eaters,
+- the maker departs from a classic in a specific, explainable way,
+- the maker keeps make records and is happy to share them,
+- batches vary and the maker can say how.
+
+Key question:
+
+> What did the maker decide in the vat and the cave, and what does each decision do in the mouth?
+
+## Pattern 8: The old cheese, rethought
+
+An old cheese is the baseline; a Vermont maker changes one thing, and the story is what that change lets you taste. Less about the maker's life, more about the eater's journey.
+
+Works well for:
+
+- hybrids of two traditions (a cheddar made partly the Alpine way),
+- new or blended milks (sheep and cow together),
+- a familiar treatment on an unfamiliar cheese (bark wrapping on a bloomy rind),
+- adventurous eaters who want to feel they're tasting something new.
+
+Key question:
+
+> What is the old cheese, what's the new idea, and what does the new idea let you taste?
+
+These two patterns became the arcs The Make and The Reinvention in `your-cheese-story/kit/v2/arcs-guide.md`, which has their elements and real best cases.
