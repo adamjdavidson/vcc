@@ -2,6 +2,8 @@
 
 *Vermont Cheese Council work. Story arcs are the spines a maker can choose. Elements are the scenes and proofs that make a spine feel true. A maker usually carries one arc, sometimes two braided together, where one raises a question the other answers. We interview for elements, and the elements show which arcs the maker can carry.*
 
+*Eight arcs are about the creamery and the people in it. Two, The Make and The Reinvention, are about one cheese. A creamery with several cheeses can carry one of these per cheese.*
+
 **Bold** = necessary or highly recommended. Plain = possible.
 
 ---
@@ -125,3 +127,43 @@
 - Overlap with The Inheritance.
 - Old documents and photos.
 - The Name: often the thing that came back. (Shared.)
+
+## The Make
+*Here is exactly what we decided in the vat and the cave, and what each decision does.*
+
+*For cheesemongers, buyers and the most obsessive eaters. It is about one cheese. It reads like a spec sheet with a story inside it: the professional wants the parameters, and the story is in why each one was chosen. This is the arc where technical vocabulary is welcome and the maker's make sheet is the best material there is.*
+
+- **The spec.** Milk (species; raw, thermized or pasteurized; which herd), rennet, cultures, format, affinage. It's the header a monger scans first, so it comes first. Jasper Hill opens every cheese page this way: milk type, style, milk source, format, affinage, typical profile.
+- **The decisive choices, each tied to what it does.** Two or three choices in the vat or the cave that make this cheese what it is, each with its consequence for texture or flavor. "Cooked and pressed, for a tight, elastic texture" (Alpha Tolman). "Dry salted, like a cheddar" (Savage). A parameter alone is a spec; a parameter with its reason is a story. These come from the maker or a published source about this cheese. Never fill them in from the style's typical recipe.
+- **The lineage, named precisely.** The classic it descends from, and exactly where it departs. "For fans of Appenzeller." "A take on Vacherin Mont d'Or or Försterkäse." "Beaufort's recipe, changed for a wheel a ninth the size." The departure is where the maker shows up.
+- **The flavor map.** Taste and aroma words a monger can repeat, ideally grouped in families the way the Comté wheel groups 83 descriptors into six. Best of all, notes for this batch: the make date, the profile, what dominates and what sits underneath.
+- This batch, this wheel: variation as data rather than a disclaimer. Two batches made a day apart can taste completely different, and saying so in advance is a mark of seriousness.
+- Who aged it, and how: the cellar, the washes, the turning, and how long. When a cheese has been aged in more than one place, that's a story in itself.
+- Care and service: how to cut it, how it changes once cut, the storage temperature. Winnimere's note that a cut wheel should be sold the same day is the kind of line only a professional needs and every professional appreciates.
+- One mechanism, in a sentence: the chemistry behind one flavor or texture, told as wonder. Heat-loving cultures breaking down protein into brothy flavors and crunchy crystals; a cheese that keeps more calcium because it was pressed sweet, so it melts. General chemistry from the style histories is labeled as general, not as this cheese's.
+- The Living Thing. (Shared.)
+- What We Won't Do. (Shared.)
+- The Upstart, with its category: which class it won, against what. (Shared.)
+
+## The Reinvention
+*An old cheese, rethought here, and you can taste the new idea.*
+
+*For the adventurous, curious eater who wants to feel they're eating something exciting. It is about one cheese. It's less about the maker's life than about the cheese's idea, and the journey the eater goes on: what the old cheese was, what's new, and what that does to taste, texture and the experience of eating it. Technical, but at the level of a curious, educated eater: one mechanism in plain words, never a make sheet.*
+
+*Close kin to Chosen Ancestors. In Chosen Ancestors the protagonist is the maker and their journey to a tradition. In The Reinvention the protagonist is the cheese, and the journey is the eater's.*
+
+- **The old form, made vivid.** The classic as a baseline the eater can picture: what it is, where it comes from, what it was for. Bark-wrapped winter cheeses from the Jura; a Gruyère or a Comté; a farmhouse cheddar. The kit's history files supply the background, once the creamery has named the lineage.
+- **The new move.** The one thing done differently here, said plainly: two traditions fused, a different milk or a blend of milks, a familiar treatment on an unfamiliar cheese, a new scale, a new place. It comes from the maker or a published source about this cheese. Never infer it.
+- **What the move does in the mouth.** Taste, texture, how it eats: what you notice that you wouldn't in the classic. One mechanism in plain words is allowed and often helps ("salted like a cheddar, so it's sharper and more crumbly than you'd expect from an Alpine").
+- The invitation: how to eat it so the journey happens. Taste it next to the classic. Peel back the bark and use a spoon. Buy it in its season.
+- Why the old form fits here: a short version of Chosen Ancestors' "why it fits this place."
+- What the cheese calls back to: a lost landscape, a forgotten practice (Shepsog's sheep).
+- The Name. (Shared.)
+- This Wheel, This Season. (Shared.)
+- The Living Thing: the bark from the farm's own trees, the cave. (Shared.)
+- The Upstart, especially when it wins in a category it doesn't seem to belong to. (Shared.)
+- A pairing that extends the idea.
+
+---
+
+*Each arc's key question, unlock question, outline beats and best cases are in `v2/arcs-guide.md`. Longer notes on the best cases, with sources, are in `story-arc-best-cases.md`.*

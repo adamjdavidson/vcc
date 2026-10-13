@@ -21,6 +21,7 @@ A short guide for the LLM to find the right kind of help quickly.
 | Vermont dairy history, geography, seasonality, artisan-cheese context | `vermont-context/` |
 | How to adapt the same story for a specific audience | `audiences/` |
 | Good and bad examples, before/after, fictional samples | `examples/` |
+| Story arcs (ten spines a story can take) and real best cases for each | `your-cheese-story/kit/v2/arcs-guide.md`, `your-cheese-story/kit/story-arc-best-cases.md` |
 | How to shape an asset (15-second pitch, product sheet, website copy, etc.) | `output-templates/` |
 | Reviewing your own draft before handing it back | `review-checklists/` |
 | Pointers for further outside research | `sources-and-further-reading.md` |
